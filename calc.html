@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    /* Add your CSS styles here */
+    .calculator {
+      width: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .button {
+      width: 40px;
+      height: 40px;
+      margin: 5px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="result" readonly>
+    <br>
+    <button class="button" onclick="clearDisplay()">C</button>
+    <button class="button" onclick="appendToDisplay('1')">1</button>
+    <button class="button" onclick="appendToDisplay('2')">2</button>
+    <button class="button" onclick="appendToDisplay('+')">+</button>
+    <br>
+    <!-- Add more buttons for other operations and numbers -->
+    <button class="button" onclick="calculate()">=</button>
+  </div>
+
+  <script>
+    function appendToDisplay(value) {
+      document.getElementById('result').value += value;
+    }
+
+    function clearDisplay() {
+      document.getElementById('result').value = '';
+    }
+
+    function calculate() {
+      var result = eval(document.getElementById('result').value);
+      document.getElementById('result').value = result;
+    }
+  </script>
+</body>
+</html>
